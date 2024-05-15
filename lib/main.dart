@@ -16,6 +16,7 @@ class FlutterBooklyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        brightness: Brightness.dark,
         scaffoldBackgroundColor: kPColor,
       ),
       home: const SplashView(),
