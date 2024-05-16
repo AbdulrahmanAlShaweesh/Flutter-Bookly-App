@@ -14,10 +14,10 @@ class CustomFeatureListViewItem extends StatelessWidget {
           borderRadius: BorderRadius.all(
             Radius.circular(19.0),
           ),
-          color: Colors.red,
+          color: Colors.white,
           image: DecorationImage(
             fit: BoxFit.fill,
-            image: AssetImage('assets/images/test_image.png'),
+            image: AssetImage('assets/images/test_images.jpeg'),
           ),
         ),
       ),
