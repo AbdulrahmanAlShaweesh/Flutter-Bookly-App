@@ -10,6 +10,7 @@ class CustomFeatureListViewItem extends StatelessWidget {
     return AspectRatio(
       aspectRatio: 2.7 / 4,
       child: Container(
+        margin: const EdgeInsets.only(left: 15),
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(
             Radius.circular(19.0),

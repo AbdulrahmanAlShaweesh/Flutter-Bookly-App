@@ -12,10 +12,7 @@ class FeatureBookListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: 12,
         itemBuilder: (context, index) {
-          return const Padding(
-            padding: EdgeInsets.only(top: 30.0, left: 10.0),
-            child: CustomFeatureListViewItem(),
-          );
+          return const CustomFeatureListViewItem();
         },
       ),
     );
