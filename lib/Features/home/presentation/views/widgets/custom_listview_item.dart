@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
 class CustomFeatureListViewItem extends StatelessWidget {
@@ -18,7 +19,7 @@ class CustomFeatureListViewItem extends StatelessWidget {
           color: Colors.white,
           image: DecorationImage(
             fit: BoxFit.fill,
-            image: AssetImage('assets/images/test_images.jpeg'),
+            image: AssetImage(AssetsData.testImage),
           ),
         ),
       ),
