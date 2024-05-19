@@ -2,7 +2,9 @@ import 'package:bookly_app/Features/home/presentation/views/widgets/custom_appba
 import 'package:bookly_app/Features/home/presentation/views/widgets/features_book_list.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/style.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -18,12 +20,18 @@ class HomeViewBody extends StatelessWidget {
             height: 10.0,
           ),
           FeatureBookListView(),
+          SizedBox(
+            height: 20.0,
+          ),
           Padding(
-            padding: EdgeInsets.only(left: 20.0, top: 40.0, bottom: 30.0),
+            padding: EdgeInsets.only(left: 20),
             child: Text(
               'Best Seller',
-              style: Style.textStyel18  ,
+              style: Style.textStyel18,
             ),
+          ),
+          SizedBox(
+            height: 20.0,
           ),
           BestSellerListViewItem(),
         ],
@@ -57,6 +65,22 @@ class BestSellerListViewItem extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(
+            width: 30.0,
+          ),
+          Column(
+            children: [
+              SizedBox(
+                width: MediaQuery.of(context).size.width * .6,
+                child: const Text(
+                  'Harry Potter and the Goblet of  Fire Fire v Fire Fire Fire FireFireFireFire',
+                  style: Style.textStyle20,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 2,
+                ),
+              ),
+            ],
+          )
         ],
       ),
     );
