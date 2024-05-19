@@ -1,7 +1,9 @@
-
+import 'package:bookly_app/Features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/style.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
   const BestSellerListViewItem({super.key});
@@ -31,38 +33,42 @@ class BestSellerListViewItem extends StatelessWidget {
           const SizedBox(
             width: 30.0,
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width * .6,
-                child: const Text(
-                  'Harry Potter and the Goblet of  Fire Fire v Fire Fire Fire FireFireFireFire',
-                  style: Style.textStyle20,
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 2,
-                ),
-              ),
-              const SizedBox(
-                height: 3.0,
-              ),
-              const Text(
-                'J.K Rowling',
-                style: Style.textStyle14,
-              ),
-              const SizedBox(
-                height: 3.0,
-              ),
-              Row(
-                children: [
-                  Text(
-                    '19.99 £',
-                    style:
-                        Style.textStyle20.copyWith(fontWeight: FontWeight.bold),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * .6,
+                  child: const Text(
+                    'Harry Potter and the Goblet of  Fire Fire v Fire Fire Fire FireFireFireFire',
+                    style: Style.textStyle20,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
                   ),
-                ],
-              ),
-            ],
+                ),
+                const SizedBox(
+                  height: 3.0,
+                ),
+                const Text(
+                  'J.K Rowling',
+                  style: Style.textStyle14,
+                ),
+                const SizedBox(
+                  height: 3.0,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      '19.99 £',
+                      style: Style.textStyle20
+                          .copyWith(fontWeight: FontWeight.bold),
+                    ),
+                    const BookRating(),
+                  ],
+                ),
+              ],
+            ),
           )
         ],
       ),
