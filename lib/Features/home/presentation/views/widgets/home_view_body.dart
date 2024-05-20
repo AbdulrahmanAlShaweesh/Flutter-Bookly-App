@@ -1,4 +1,4 @@
-import 'package:bookly_app/Features/home/presentation/views/widgets/best_seller_listview_item.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/best_seller_sliverlist.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/custom_appbar.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/features_book_list.dart';
 import 'package:bookly_app/core/utils/style.dart';
@@ -10,31 +10,42 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomAppBar(),
-          SizedBox(
-            height: 10.0,
+      body: CustomScrollView(
+        physics: BouncingScrollPhysics(),
+        slivers: [
+          SliverToBoxAdapter(
+            child: CustomAppBar(),
           ),
-          FeatureBookListView(),
-          SizedBox(
-            height: 20.0,
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 20),
-            child: Text(
-              'Best Seller',
-              style: Style.textStyel18,
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 10.0,
             ),
           ),
-          SizedBox(
-            height: 20.0,
+          SliverToBoxAdapter(
+            child: FeatureBookListView(),
           ),
-          BestSellerListViewItem(),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 20.0,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.only(left: 20),
+              child: Text(
+                'Best Seller',
+                style: Style.textStyel18,
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 20.0,
+            ),
+          ),
+          BestSellerSliverList(),
         ],
       ),
     );
   }
 }
-
