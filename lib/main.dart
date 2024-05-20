@@ -1,7 +1,6 @@
-import 'package:bookly_app/Features/Splash/presentation/views/splash_view.dart';
 import 'package:bookly_app/constants.dart';
+import 'package:bookly_app/core/utils/app_routers.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -14,7 +13,8 @@ class FlutterBooklyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // we use it for navigator from screen to other screen //
-    return GetMaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
@@ -23,7 +23,6 @@ class FlutterBooklyApp extends StatelessWidget {
           ThemeData.dark().textTheme,
         ),
       ),
-      home: const SplashView(),
     );
   }
 }
