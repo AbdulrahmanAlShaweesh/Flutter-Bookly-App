@@ -1,7 +1,7 @@
+import 'package:bookly_app/Features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/custom_book_detials_appbar.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/custom_listview_item.dart';
 import 'package:bookly_app/core/utils/style.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -17,7 +17,7 @@ class BookViewDetialsBody extends StatelessWidget {
         children: [
           const CustomBooDetialsAppBar(),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: width * .15),
+            padding: EdgeInsets.symmetric(horizontal: width * .2),
             child: const CustomBookImage(),
           ),
           const SizedBox(
@@ -27,13 +27,25 @@ class BookViewDetialsBody extends StatelessWidget {
             'The Jungle Book',
             style: Style.textStyle30,
           ),
-          Text(
-            'Rudyard Kipling',
-            style: Style.textStyel18.copyWith(
+          const SizedBox(
+            height: 6.0,
+          ),
+          Opacity(
+            opacity: .7,
+            child: Text(
+              'Rudyard Kipling',
+              style: Style.textStyel18.copyWith(
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.w500,
-                color: Colors.white.withOpacity(.7)),
-          )
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 18.0,
+          ),
+          const BookRating(
+            mainAxisAlignment: MainAxisAlignment.center,
+          ),
         ],
       ),
     );
