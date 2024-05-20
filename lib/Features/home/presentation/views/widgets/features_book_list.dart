@@ -1,3 +1,5 @@
+// ignore_for_file: sized_box_for_whitespace
+
 import 'package:bookly_app/Features/home/presentation/views/widgets/custom_listview_item.dart';
 import 'package:flutter/material.dart';
 
