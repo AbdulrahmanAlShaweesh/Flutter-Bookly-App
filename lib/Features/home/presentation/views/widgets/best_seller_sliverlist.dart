@@ -7,11 +7,15 @@ class BestSellerSliverList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverList(
-        delegate: SliverChildBuilderDelegate(childCount: 10, (context, index) {
-      return const Padding(
-        padding: EdgeInsets.symmetric(vertical: 10),
-        child: BestSellerListViewItem(),
-      );
-    }));
+      delegate: SliverChildBuilderDelegate(
+        childCount: 10,
+        (context, index) {
+          return const Padding(
+            padding: EdgeInsets.symmetric(vertical: 10),
+            child: BookListViewItem(),
+          );
+        },
+      ),
+    );
   }
 }
