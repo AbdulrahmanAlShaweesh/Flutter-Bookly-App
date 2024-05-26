@@ -1,5 +1,3 @@
-
-
 import 'package:bookly_app/core/error/failure.dart';
 import 'package:dartz/dartz.dart';
 
