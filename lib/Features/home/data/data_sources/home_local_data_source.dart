@@ -8,6 +8,7 @@ abstract class HomeLocalDataSource {
   List<BookEntity> fetchNewsestBooks();
 }
 
+// we need to catch the data from hive... it is better to book entiey 
 class HomeLocalDataSourceImpl extends HomeLocalDataSource {
-  
+
 }

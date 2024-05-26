@@ -1,10 +1,8 @@
 // this is a remote data source to fetch data from outside the app
 // api, firebase, database etc...
-
 import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/Features/home/domain/entities/book_entity.dart';
 import 'package:bookly_app/core/utils/api_services.dart';
-
 abstract class HomeRemoteDataSource {
   // here we put what will hapen to the remote data source.  Future<Either<Faliure, List<BookEntity>>> fetchFeatureBooks();
   // the class is noly responsive to fetch the data,will not handle the expention
@@ -12,12 +10,10 @@ abstract class HomeRemoteDataSource {
   Future<List<BookEntity>> fetchFeatureBooks();
   Future<List<BookEntity>> fetchNewsestBooks();
 }
-
 class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
   final ApiServices apiServices;
 
   HomeRemoteDataSourceImpl(this.apiServices);
-
   @override
   Future<List<BookEntity>> fetchFeatureBooks({int pageNumber = 0}) async {
     var data = await apiServices.get(
@@ -27,7 +23,6 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
 
     return books;
   }
-
   @override
   Future<List<BookEntity>> fetchNewsestBooks() async {
     var data = await apiServices.get(
@@ -44,7 +39,6 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
     for (var bookMap in data['items']) {
       books.add(BookModel.fromJson(bookMap));
     }
-
     return books;
   }
 }
