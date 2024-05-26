@@ -8,7 +8,15 @@ abstract class HomeLocalDataSource {
   List<BookEntity> fetchNewsestBooks();
 }
 
-// we need to catch the data from hive... it is better to book entiey 
+// we need to catch the data from hive... it is better to book entiey
 class HomeLocalDataSourceImpl extends HomeLocalDataSource {
+  @override
+  List<BookEntity> fetchFeatureBooks() {
+    throw UnimplementedError();
+  }
 
+  @override
+  List<BookEntity> fetchNewsestBooks() {
+    throw UnimplementedError();
+  }
 }

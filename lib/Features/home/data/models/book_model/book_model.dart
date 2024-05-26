@@ -43,7 +43,7 @@ class BookModel extends BookEntity {
         volumeInfo: json['volumeInfo'] == null
             ? null
             : VolumeInfo.fromJson(json['volumeInfo'] as Map<String, dynamic>),
-        saleInfo: json['saleInfo'] == nullw
+        saleInfo: json['saleInfo'] == null
             ? null
             : SaleInfo.fromJson(json['saleInfo'] as Map<String, dynamic>),
         accessInfo: json['accessInfo'] == null
@@ -62,6 +62,6 @@ class BookModel extends BookEntity {
         'volumeInfo': volumeInfo?.toJson(),
         'saleInfo': saleInfo?.toJson(),
         'accessInfo': accessInfo?.toJson(),
-        'searchInfo': searchInfo?.toJson(),
+        'searchInfo': searchInfo?.toJson(), 
       };
 }
