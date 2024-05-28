@@ -16,7 +16,6 @@ abstract class HomeRemoteDataSource {
 
 class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
   final ApiServices apiServices;
-
   HomeRemoteDataSourceImpl(this.apiServices);
   @override
   Future<List<BookEntity>> fetchFeatureBooks({int pageNumber = 0}) async {
@@ -28,7 +27,6 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
     saveBoxData(books, kFeaturedBox);
     return books;
   }
-
   @override
   Future<List<BookEntity>> fetchNewsestBooks() async {
     var data = await apiServices.get(
@@ -36,9 +34,9 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
 
     List<BookEntity> books = getBooksList(data);
 
+    saveBoxData(books, kNewsBook);
     return books;
   }
-
   List<BookEntity> getBooksList(Map<String, dynamic> data) {
     List<BookEntity> books = [];
 
