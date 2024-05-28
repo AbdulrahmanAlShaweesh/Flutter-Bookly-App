@@ -20,6 +20,7 @@ class HomeLocalDataSourceImpl extends HomeLocalDataSource {
 
   @override
   List<BookEntity> fetchNewsestBooks() {
-    throw UnimplementedError();
+    var box = Hive.box<BookEntity>(kNewsBook);
+    return box.values.toList();
   }
 }
