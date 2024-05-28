@@ -40,12 +40,12 @@ class HomeRepoImplementation extends HomeRepo {
   Future<Either<Faliure, List<BookEntity>>> fetchNewsestBooks() async {
     try {
       List<BookEntity> books;
-      books = homelocaldatasource.fetchFeatureBooks();
+      books = homelocaldatasource.fetchNewsestBooks();
       if (books.isNotEmpty) {
         //return the data in the right side which is the books incase there is no error or issues
         return right(books);
       }
-      books = await homeremotedatasource.fetchFeatureBooks();
+      books = await homeremotedatasource.fetchNewsestBooks();
       return right(books);
     } catch (e) {
       if (e is DioException) {
