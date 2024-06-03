@@ -1,16 +1,15 @@
 import 'package:bloc/bloc.dart';
 import 'package:bookly_app/Features/home/domain/entities/book_entity.dart';
-import 'package:bookly_app/Features/home/domain/use_case/fetch_featured_book_use_case.dart';
 import 'package:bookly_app/Features/home/domain/use_case/fetch_news_book_use_case.dart';
-import 'package:bookly_app/Features/home/presentation/manager/featured_book_cubit/fetch_featured_book_cubit.dart';
 import 'package:meta/meta.dart';
 
-part 'fetch_newest_book_state.dart';
+part 'fetch_newest_books_state.dart';
 
-class FetchNewestBookCubit extends Cubit<FetchNewestBookState> {
-  FetchNewestBookCubit(this.fetchNewsBookUseCase) : super(FetchNewestBookInitial());
+class FetchNewestBooksCubit extends Cubit<FetchNewestBooksState> {
+  FetchNewestBooksCubit(this.fetchNewsBookUseCase) : super(FetchNewestBooksInitial());
 
-  final  FetchNewsBookUseCase fetchNewsBookUseCase;
+  final FetchNewsBookUseCase fetchNewsBookUseCase; 
+
   Future<void> fetchFeaturedBooks() async {
     emit(FetchNewestBookLoading());
 
@@ -21,7 +20,13 @@ class FetchNewestBookCubit extends Cubit<FetchNewestBookState> {
         FetchNewestBookFaliure(faluire.message),
       );
     }, (books) {
-      emit(FetchNewestBookSucess(books));
+      emit(FetchNewestBookSuccess(books));
     });
   }
+
+
 }
+
+
+
+  
